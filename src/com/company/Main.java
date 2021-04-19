@@ -1,3 +1,4 @@
+//Halit Burak Yeşildal 18050111043
 package com.company;
 
 import java.io.IOException;
@@ -18,19 +19,23 @@ public class Main {
         menu();
         choise= scanner.nextInt();
             switch (choise){
-                case 1: input=inputTaker();
+                case 1: System.out.println("Example input : \"Derya  Celik,  Dr.  Nazli  Cicek,Endocrinologist, 22/05/2020, 09:30\" ");
+                        input=inputTaker();
                         bst.add(bst.root,new Patient(input[0],input[1],input[2],input[3],input[4]));
                         break;
-                case 2: input=inputTaker();
+                case 2: System.out.println("Example input : \"Derya  Celik,  Dr.  Nazli  Cicek,Endocrinologist, 22/05/2020, 09:30\" ");
+                        input=inputTaker();
                         bst.removeGiven(input);
                         break;
                 case 3: bst.inorderTraversal(bst.root);
                         break;
-                case 4: input=inputTaker();
+                case 4: System.out.println("Example input : \"Derya  Celik,  Dr.  Nazli  Cicek,Endocrinologist, 22/05/2020, 09:30\" ");
+                        input=inputTaker();
                         str=  (bst.search(bst.root,input[0])!=null) ? (bst.search(bst.root,input[0])).data.toString(): "Given patient not found..";
                         System.out.println(str);
                         break;
                 case 5: System.out.println("Enter patient name..");
+                    System.out.println("Example input : \"Derya  Celik\" ");
                         scanner.nextLine();
                         str = scanner.nextLine();
                         bst.list(bst.root,str);
