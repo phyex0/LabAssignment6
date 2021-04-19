@@ -30,15 +30,21 @@ public class Patient {
         patientLL.add(hospital);
     }
 
+    //if there is a match delete the given record.
     public void deleteGivenNode(Hospital hospital){
-        for(int i=0;i<patientLL.size();i++){
+        boolean check=false;
+        for(int i=0;i<patientLL.size();i++)
             if( patientLL.get(i).getDoctor().equalsIgnoreCase(hospital.getDoctor()) &&
                 patientLL.get(i).getDepartment().equalsIgnoreCase(hospital.getDepartment())  &&
                 patientLL.get(i).getDate().equalsIgnoreCase(hospital.getDate()) &&
-                patientLL.get(i).getTime().equalsIgnoreCase(hospital.getTime()))
+                patientLL.get(i).getTime().equalsIgnoreCase(hospital.getTime())){
 
-                    patientLL.remove(i);
-      }
+                patientLL.remove(i);
+                check=true;
+            }
+
+        if(check==false)
+            System.out.println("Given record doesn't exist");
 
     }
 
